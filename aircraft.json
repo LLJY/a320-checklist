@@ -1,8 +1,8 @@
 
 {
   "id": "A320",
-  "aircraftName": "Airbus A320neo",
-  "logoUrl": "https://commons.wikimedia.org/wiki/File:Airbus_logo_2017.png",
+  "aircraftName": "A320neo",
+  "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/Airbus_logo_2017.png",
   "engineOptions": ["CFM LEAP-1A", "PWG1127G-JM"],
   "performance": {
     "emptyWeight_t": 44.2,
