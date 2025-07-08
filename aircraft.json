@@ -1,0 +1,251 @@
+
+{
+  "id": "A320",
+  "aircraftName": "Airbus A320neo",
+  "logoUrl": "https://raw.githubusercontent.com/lee-jing-yi/flight-sim-checklist-react/main/public/assets/airbus_logo.png",
+  "engineOptions": ["CFM LEAP-1A", "PWG1127G-JM"],
+  "performance": {
+    "emptyWeight_t": 44.2,
+    "maxPayload_t": 20.1,
+    "maxFuel_t": 18.7,
+    "baseV1": 132,
+    "baseVR": 135,
+    "baseV2": 138,
+    "baseWeight_t": 60,
+    "baseRunwayLength_m": 2500,
+    "weightAdjustmentFactor_kt_per_t": 1.03,
+    "runwayLengthAdjustmentFactor_kt_per_100m": 0.2,
+    "elevationAdjustmentFactor_kt_per_1000ft": 1.1
+  },
+  "checklist": [
+    {
+      "id": "pre-flight",
+      "title": "PRE-FLIGHT",
+      "accentColor": "#f7768e",
+      "groups": [
+        {
+          "title": "1. Cockpit Preparation",
+          "items": [
+            { "id": "v-cp-1", "name": "Parking Brake", "status": "CHECK ON", "mode": "verbose" },
+            { "id": "v-cp-2", "name": "Landing Gear Lever", "status": "CHECK DOWN", "mode": "verbose" },
+            { "id": "s-cp-1", "name": "Fuel Quantity", "status": "CHECK", "mode": "simplified" },
+            { "id": "b-cp-1", "name": "Batteries 1+2 (>25.5V)", "status": "ON AND CHECK", "mode": "both" },
+            { "id": "v-cp-4", "name": "External Power", "status": "ON (IF AVAIL)", "mode": "verbose" },
+            { "id": "v-cp-5", "name": "APU Fire Test", "status": "TEST, VERIFY", "mode": "verbose" },
+            { "id": "b-cp-2", "name": "APU Master SW & Start", "status": "ON", "mode": "both" }
+          ]
+        },
+        {
+          "title": "2. After APU Start",
+          "items": [
+            { "id": "b-aas-1", "name": "APU Bleed", "status": "ON", "mode": "both" },
+            { "id": "v-aas-2", "name": "Battery Charging", "status": "CHECK (ELEC PAGE)", "mode": "verbose" },
+            { "id": "b-aas-2", "name": "Overhead Panel Scan", "status": "NO WHITE LIGHTS", "mode": "both" }
+          ]
+        },
+        {
+          "title": "3. Systems Setup",
+          "items": [
+            { "id": "s-ss-1", "name": "ADIRUs 1, 2, 3", "status": "NAV", "mode": "simplified" },
+            { "id": "v-ss-1", "name": "ADIRUs 1, 2, then 3", "status": "ON / NAV", "mode": "verbose" },
+            { "id": "v-ss-2", "name": "Crew Oxygen Supply", "status": "ON", "mode": "verbose" },
+            { "id": "v-ss-3", "name": "EMER EXIT LT", "status": "ARM", "mode": "verbose" },
+            { "id": "b-ss-1", "name": "Signs (NO SMOKING/SEATBELT)", "status": "AUTO/ON", "mode": "both" },
+            { "id": "b-ss-2", "name": "Altimeters (QNH)", "status": "SET (BOTH)", "mode": "both" },
+            { "id": "v-ss-6", "name": "FMGS", "status": "SET & CHECKED", "mode": "verbose" }
+          ]
+        },
+        {
+          "title": "4. Before Pushback",
+          "items": [
+            { "id": "b-bp-1", "name": "Windows & Doors", "status": "CLOSED / CHECKED", "mode": "both" },
+            { "id": "v-bp-2", "name": "Slides", "status": "ARMED", "mode": "verbose" },
+            { "id": "b-bp-2", "name": "Beacon", "status": "ON", "mode": "both" },
+            { "id": "b-bp-3", "name": "ADIRU", "status": "VERIFY ALIGNED", "mode": "both" },
+            { "id": "v-bp-4", "name": "ENGINE Fire Test", "status": "TEST, VERIFY", "mode": "verbose" },
+            { "id": "v-bp-5", "name": "Pushback Clearance", "status": "OBTAIN", "mode": "verbose" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "start-taxi",
+      "title": "START & TAXI",
+      "accentColor": "#e0af68",
+      "groups": [
+        {
+          "title": "1. Engine Start",
+          "items": [
+            { "id": "v-es-1", "name": "Engine Area", "status": "CLEAR", "mode": "verbose"},
+            { "id": "b-es-1", "name": "ENG MODE Selector", "status": "IGN/START", "mode": "both"},
+            { "id": "v-es-3", "name": "Dual Cooling", "status": "ON (AS REQ'D)", "mode": "both", "engine": "PWG1127G-JM"},
+            { "id": "b-es-2", "name": "Engine Master 2 then 1", "status": "START", "mode": "both"},
+            { "id": "v-es-5", "name": "Monitor Start", "status": "(N2, FF, EGT, OIL)", "mode": "verbose"}
+          ]
+        },
+        {
+          "title": "2. After Start",
+          "items": [
+            { "id": "v-as-1", "name": "ENG MODE Selector", "status": "NORM", "mode": "verbose"},
+            { "id": "v-as-2", "name": "Dual Cooling", "status": "AS REQ'D", "mode": "simplified", "engine": "PWG1127G-JM"},
+            { "id": "v-as-3", "name": "APU Bleed", "status": "OFF", "mode": "verbose"},
+            { "id": "v-as-5", "name": "APU MASTER SW", "status": "OFF (UNLESS REQ)", "mode": "verbose"},
+            { "id": "s-as-1", "name": "APU BLEED & MASTER", "status": "OFF", "mode": "simplified"},
+            { "id": "b-as-1", "name": "Anti-Ice", "status": "AS REQ'D", "mode": "both"},
+            { "id": "b-as-2", "name": "Ground Spoilers", "status": "ARM", "mode": "both"},
+            { "id": "b-as-3", "name": "Flaps", "status": "SET T/O CONFIG", "mode": "both"},
+            { "id": "v-as-9", "name": "Pitch Trim", "status": "SET T/O VALUE", "mode": "verbose"},
+            { "id": "v-as-7", "name": "Rudder Trim", "status": "RESET ZERO", "mode": "verbose"},
+            { "id": "s-as-3", "name": "Pitch & Rudder Trim", "status": "SET / RESET AS REQ'D", "mode": "simplified"},
+            { "id": "b-as-4", "name": "ECAM STATUS", "status": "CHECK", "mode": "both"}
+          ]
+        },
+        {
+          "title": "3. Taxi",
+          "items": [
+            { "id": "v-tx-1", "name": "Nosewheel Light", "status": "TAXI", "mode": "verbose"},
+            { "id": "v-tx-2", "name": "Parking Brake", "status": "RELEASE", "mode": "verbose"},
+            { "id": "v-tx-3", "name": "Brake Check", "status": "PERFORM", "mode": "verbose"},
+            { "id": "b-tx-1", "name": "Flight Controls", "status": "CHECK (F/CTL PAGE)", "mode": "both"},
+            { "id": "v-tx-5", "name": "Autobrake", "status": "MAX", "mode": "verbose"},
+            { "id": "v-tx-6", "name": "Takeoff Config Button", "status": "TEST (NO ALARM)", "mode": "verbose"},
+            { "id": "b-tx-2", "name": "ECAM T.O. MEMO", "status": "CHECK (NO BLUE)", "mode": "both"},
+            { "id": "s-tx-2", "name": "Flap Setting", "status": "CONFIRM", "mode": "simplified"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "takeoff-climb",
+      "title": "T/O & CLIMB",
+      "accentColor": "#73daca",
+      "groups": [
+        {
+          "title": "1. Before Takeoff (Line-up)",
+          "items": [
+            { "id": "s-bt-1", "name": "T.O Runway", "status": "CONFIRM", "mode": "simplified"},
+            { "id": "v-bt-2", "name": "Exterior Lights", "status": "SET FOR T/O", "mode": "verbose"},
+            { "id": "b-bt-1", "name": "Cabin Crew", "status": "ADVISE \"SEATED\"", "mode": "both"},
+            { "id": "b-bt-2", "name": "RADAR / PWS", "status": "ON / AUTO", "mode": "both"},
+            { "id": "b-bt-3", "name": "TCAS", "status": "TA/RA", "mode": "both"},
+            { "id": "b-bt-4", "name": "PACKS 1 & 2", "status": "AS REQ'D", "mode": "both"}
+          ]
+        },
+        {
+          "title": "2. After Takeoff / Climb",
+          "items": [
+            { "id": "b-ac-1", "name": "Landing Gear", "status": "UP", "mode": "both"},
+            { "id": "v-ac-2", "name": "Thrust Levers", "status": "SET CLB ON SCHED", "mode": "verbose"},
+            { "id": "b-ac-2", "name": "Flaps/Slats", "status": "RETRACT ON SCHED", "mode": "both"},
+            { "id": "b-ac-3", "name": "Ground Spoilers", "status": "DISARM", "mode": "both"},
+            { "id": "b-ac-4", "name": "PACKS", "status": "ON (IF OFF)", "mode": "both"},
+            { "id": "v-ac-6", "name": "Transition Altitude", "status": "SET STD", "mode": "verbose"},
+            { "id": "v-ac-7", "name": "Landing Lights (10k FT)", "status": "OFF & RETRACT", "mode": "verbose"},
+            { "id": "b-ac-5", "name": "Seat Belts Sign (10k FT)", "status": "AS REQ'D", "mode": "both"},
+            { "id": "s-ac-5", "name": "Exterior Lights", "status": "AS REQ'D", "mode": "simplified"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cruise-descent",
+      "title": "CRUISE & DES",
+      "accentColor": "#7dcfff",
+      "groups": [
+        {
+          "title": "1. Cruise",
+          "items": [
+            { "id": "b-cr-1", "name": "ECAM System Pages", "status": "MONITOR", "mode": "both"},
+            { "id": "v-cr-2", "name": "MCDU PROG/F-PLN", "status": "MONITOR", "mode": "verbose"},
+            { "id": "b-cr-2", "name": "Fuel", "status": "CHECK BALANCE/PRED", "mode": "both"}
+          ]
+        },
+        {
+          "title": "2. Descent",
+          "items": [
+            { "id": "s-dp-1", "name": "Descent Prep", "status": "COMPLETE", "mode": "simplified" },
+            { "id": "v-dp-1", "name": "ATIS/Weather", "status": "OBTAIN", "mode": "verbose" },
+            { "id": "v-dp-2", "name": "MCDU PERF APPR Page", "status": "SET", "mode": "verbose" },
+            { "id": "v-dp-3", "name": "MCDU F-PLN", "status": "CHECK/BRIEF", "mode": "verbose" },
+            { "id": "v-dp-4", "name": "Auto Brake", "status": "SELECT", "mode": "verbose" },
+            { "id": "v-dp-5", "name": "Briefing", "status": "CONFIRM", "mode": "verbose" },
+            { "id": "v-dp-6", "name": "Seat Belts (10k FT)", "status": "ON", "mode": "verbose" },
+            { "id": "v-dp-7", "name": "Landing Lights (10k FT)", "status": "ON", "mode": "verbose" },
+            { "id": "v-dp-8", "name": "Transition Level", "status": "SET QNH", "mode": "verbose" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "approach-landing",
+      "title": "APPR & LAND",
+      "accentColor": "#bb9af7",
+      "groups": [
+        {
+          "title": "1. Approach",
+          "items": [
+            { "id": "b-ap-1", "name": "Minimums", "status": "SET", "mode": "both" },
+            { "id": "b-ap-2", "name": "MCDU PERF Page", "status": "ACTIVATE APPR PHASE", "mode": "both" },
+            { "id": "b-ap-3", "name": "FCU APPR MODE", "status": "SET", "mode": "both" },
+            { "id": "b-ap-4", "name": "Flaps/Slats", "status": "EXTEND ON SCHED", "mode": "both" },
+            { "id": "v-ap-5", "name": "Ground Spoilers", "status": "ARM", "mode": "verbose" },
+            { "id": "v-ap-6", "name": "Exterior Lights", "status": "ON", "mode": "verbose" }
+          ]
+        },
+        {
+          "title": "2. Landing",
+          "items": [
+            { "id": "b-ld-1", "name": "SIGNS", "status": "ON", "mode": "both" },
+            { "id": "b-ld-2", "name": "G/A Altitude", "status": "SET", "mode": "both" },
+            { "id": "b-ld-3", "name": "Cabin Crew", "status": "ADVISED", "mode": "both" },
+            { "id": "b-ld-4", "name": "Flaps/Slats", "status": "EXTENDED", "mode": "both" },
+            { "id": "b-ld-5", "name": "Landing Gear", "status": "DOWN", "mode": "both" },
+            { "id": "v-ld-4", "name": "ECAM MEMO (LDG)", "status": "CHECK (NO BLUE)", "mode": "verbose" },
+            { "id": "v-ld-7", "name": "ECAM WHEEL Page", "status": "CHECK 3 GREEN", "mode": "verbose" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "post-flight",
+      "title": "POST-FLIGHT",
+      "accentColor": "#ff9e64",
+      "groups": [
+        {
+          "title": "1. After Landing",
+          "items": [
+            { "id": "b-al-1", "name": "Spoilers", "status": "RETRACT & DISARM", "mode": "both"},
+            { "id": "b-al-2", "name": "Flaps", "status": "RETRACT", "mode": "both"},
+            { "id": "b-al-3", "name": "RADAR & PWS", "status": "OFF", "mode": "both"},
+            { "id": "b-al-4", "name": "APU", "status": "START (IF REQ)", "mode": "both"},
+            { "id": "s-al-5", "name": "Exterior Lights", "status": "AS REQ'D", "mode": "simplified"},
+            { "id": "v-al-5", "name": "Strobe Lights", "status": "AUTO", "mode": "verbose"},
+            { "id": "v-al-6", "name": "TCAS", "status": "STBY", "mode": "verbose"}
+          ]
+        },
+        {
+          "title": "2. Parking",
+          "items": [
+            { "id": "b-pk-1", "name": "Parking Brake", "status": "ON", "mode": "both"},
+            { "id": "v-pk-2", "name": "APU Bleed", "status": "ON (IF APU AVAIL)", "mode": "verbose"},
+            { "id": "b-pk-2", "name": "Engines 1 & 2", "status": "OFF", "mode": "both"},
+            { "id": "b-pk-3", "name": "Beacon", "status": "OFF (ENG SPOOLED)", "mode": "both"},
+            { "id": "v-pk-5", "name": "Seat Belts Sign", "status": "OFF", "mode": "verbose"},
+            { "id": "b-pk-4", "name": "Fuel Pumps", "status": "OFF", "mode": "both"}
+          ]
+        },
+        {
+          "title": "3. Securing The Aircraft",
+          "items": [
+            { "id": "b-sc-1", "name": "ADIRUs 1, 3, 2", "status": "OFF", "mode": "both"},
+            { "id": "b-sc-2", "name": "EMER EXIT LT", "status": "OFF", "mode": "both"},
+            { "id": "s-sc-3", "name": "Signs", "status": "OFF", "mode": "simplified"},
+            { "id": "v-sc-3", "name": "APU Bleed & Master", "status": "OFF", "mode": "verbose"},
+            { "id": "v-sc-4", "name": "External Power", "status": "OFF", "mode": "verbose"},
+            { "id": "b-sc-3", "name": "Batteries 1 & 2", "status": "OFF", "mode": "both"}
+          ]
+        }
+      ]
+    }
+  ]
+}
