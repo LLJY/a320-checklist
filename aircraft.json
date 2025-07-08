@@ -2,7 +2,7 @@
 {
   "id": "A320",
   "aircraftName": "Airbus A320neo",
-  "logoUrl": "https://raw.githubusercontent.com/lee-jing-yi/flight-sim-checklist-react/main/public/assets/airbus_logo.png",
+  "logoUrl": "https://commons.wikimedia.org/wiki/File:Airbus_logo_2017.png",
   "engineOptions": ["CFM LEAP-1A", "PWG1127G-JM"],
   "performance": {
     "emptyWeight_t": 44.2,
