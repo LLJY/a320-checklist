@@ -21,7 +21,7 @@
     {
       "id": "pre-flight",
       "title": "PRE-FLIGHT",
-      "accentColor": "#f7768e",
+      "accentColor": "#FF0055",
       "groups": [
         {
           "title": "1. Cockpit Preparation",
@@ -71,7 +71,7 @@
     {
       "id": "start-taxi",
       "title": "START & TAXI",
-      "accentColor": "#e0af68",
+      "accentColor": "#FFA500",
       "groups": [
         {
           "title": "1. Engine Start",
@@ -118,7 +118,7 @@
     {
       "id": "takeoff-climb",
       "title": "T/O & CLIMB",
-      "accentColor": "#73daca",
+      "accentColor": "#00CED1",
       "groups": [
         {
           "title": "1. Before Takeoff (Line-up)",
@@ -150,7 +150,7 @@
     {
       "id": "cruise-descent",
       "title": "CRUISE & DES",
-      "accentColor": "#7dcfff",
+      "accentColor": "#00BFFF",
       "groups": [
         {
           "title": "1. Cruise",
@@ -179,7 +179,7 @@
     {
       "id": "approach-landing",
       "title": "APPR & LAND",
-      "accentColor": "#bb9af7",
+      "accentColor": "#8A2BE2",
       "groups": [
         {
           "title": "1. Approach",
@@ -209,7 +209,7 @@
     {
       "id": "post-flight",
       "title": "POST-FLIGHT",
-      "accentColor": "#ff9e64",
+      "accentColor": "#FFD700",
       "groups": [
         {
           "title": "1. After Landing",
